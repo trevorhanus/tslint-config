@@ -4,7 +4,7 @@ This is the tslint configuration that we use at Gravity Payments. Follow the ste
 
 ## Using in a TS project
 
-make sure you have the peer dependencies
+make sure you have all the peer dependencies installed
 ```bash
 $ yarn add --dev typescript tslint
 ```
@@ -22,21 +22,21 @@ add a `tslint.json` file in the root dir that looks like this
 ```
 this tells tslint to grab the `tslint.json` file at `./node_modules/tslint-config-gravity`
 
-run the linter
+ make sure you have tslint and typescript installed globally
 
-(need to have tslint, and typescript installed globally)
 ```bash
 $ npm install -g tslint typescript
 ```
 
-then, run this command
+now run the linter
+
 ```bash
 $ tslint --project ./tsconfig.json
 ```
 
 ## strictNullChecks
 
-The `strict-type-predicates` tslint rule requires that your tsconfig.json file has the `strictNullChecks` prop set to true. To do this, make sure your tsconfig.json file has the following prop. (Here)[https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html] is some more info on this.
+The `strict-type-predicates` tslint rule requires that your tsconfig.json file has the `strictNullChecks` prop set to true. To do this, make sure your tsconfig.json file has the following prop. [Here](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html) is some more info on this.
 ```json
 {
     "compilerOptions": {
@@ -52,8 +52,15 @@ tslint has the option to auto fix some of the simpler checks. To do this, simply
 $ tslint --project tsconfig.json --fix
 ```
 
+## Using with webpack
+
+You can setup webpack to run your code through tslint during the bundle process. Errors will not prevent your code from being bundled, but will provide warnings in the console. To set this up follow the instructions below.
+
+TODO: fill this out
+
+
 ## Setting up vscode to run tslint
 
-You can configure vscode to run tslint automatically.
+You can configure vscode to run tslint while you are editing code.
 
-but idk how right now, so we need to update this portion of the documentation.
+TODO: fill this out
